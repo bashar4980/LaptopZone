@@ -8,12 +8,13 @@ module.exports = {
       {
         doctor_portal: {
           primary: "#F0FFF0",
+          
 
           secondary: "#21B573",
 
-          accent: "#413960",
+          accent: "#282531",
 
-          neutral: "#6C6B6B",
+          neutral: "#413960",
 
           "base-100": "#FFFFFF",
 
