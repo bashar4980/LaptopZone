@@ -3,6 +3,32 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  daisyui: {
+    themes: [
+      {
+        doctor_portal: {
+          primary: "#F0FFF0",
+
+          secondary: "#21B573",
+
+          accent: "#413960",
+
+          neutral: "#6C6B6B",
+
+          "base-100": "#FFFFFF",
+
+          info: "#5CC4DB",
+
+          success: "#10562C",
+
+          warning: "#9A6509",
+
+          error: "#F5312E",
+        },
+      },
+    ],
+  },
+
   theme: {
     extend: {},
   },
