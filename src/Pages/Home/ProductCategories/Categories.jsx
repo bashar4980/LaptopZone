@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Categories = ({Product}) => {
-    const {Category , CategoryImg } = Product
+    const {Category , CategoryImg  , _id} = Product
     // 
     return (
         <div>
@@ -16,7 +17,7 @@ const Categories = ({Product}) => {
             </figure>
             <div className="mx-auto py-2">
               <h2 className="text-xl font-semibold ">{Category}</h2>
-              <button className='btn btn-outline btn-sm my-3 hover:bg-secondary'>Buy Now</button>
+              <Link  to={`/products/${_id}`} className='btn btn-outline btn-sm my-3 hover:bg-secondary'>Buy Now</Link>
               
             </div>
           </div>
