@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
@@ -7,11 +8,12 @@ import { UserContext } from "../../Context/AuthProvider";
 // import Reset from "../ResetModal/Reset";
 
 const Login = () => {
-  const { signinUser } = useContext(UserContext);
+  const { signinUser, providerSignin } = useContext(UserContext);
   const { register, reset, handleSubmit } = useForm();
   const [error, setError] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
+  const provider = new GoogleAuthProvider();
   let from = location.state?.from?.pathname || "/";
 
   const loginHandeler = (data) => {
@@ -31,7 +33,20 @@ const Login = () => {
       });
   };
 
-  console.log();
+  //sign in google
+
+  const signinWithgoogle = () => {
+    providerSignin(provider)
+      .then((result) => {
+        console.log(result);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  //
 
   return (
     <div className="max-w-sm mx-auto  my-10 p-8 space-y-3 rounded-xl bg-white drop-shadow-lg text-neutral">
@@ -51,7 +66,7 @@ const Login = () => {
             className="w-full px-4 py-3 rounded-md border-gray-700 border text-neutral focus:border-violet-400"
           />
         </div>
-        
+
         <div className="space-y-1 text-sm">
           <label htmlFor="password" className="block text-neutral">
             Password
@@ -65,11 +80,9 @@ const Login = () => {
             className="w-full px-4 py-3 rounded-md border-gray-700 border text-neutral focus:border-violet-400"
           />
           <div className="flex justify-end text-xs text-neutral">
-            
-              <label className="reset"  htmlFor="reset">
-               Forgot password ?
-              </label>
-          
+            <label className="reset" htmlFor="reset">
+              Forgot password ?
+            </label>
           </div>
         </div>
         <button
@@ -86,7 +99,11 @@ const Login = () => {
         <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
       </div>
       <div className="flex justify-center space-x-4">
-        <button aria-label="Log in with Google" className="p-3 rounded-sm">
+        <button
+          onClick={signinWithgoogle}
+          aria-label="Log in with Google"
+          className="p-3 rounded-sm"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"

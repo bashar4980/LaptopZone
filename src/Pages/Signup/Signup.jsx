@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../Context/AuthProvider";
 import toast from "react-hot-toast";
+import { GoogleAuthProvider } from "firebase/auth";
 // import { UserContext } from "../../context/Authcontext";
 
 const Signup = () => {
-  const { name, createUser, updateUser } = useContext(UserContext);
+  const { createUser, updateUser , providerSignin } = useContext(UserContext);
+  const provider = new GoogleAuthProvider()
 
   //
   const {
@@ -70,6 +72,28 @@ const Signup = () => {
     }
     )
   }
+ //login by email 
+
+ const signinWithgoogle =()=>{
+  providerSignin(provider)
+  .then(result =>{
+    const name = result.user.displayName;
+    const email= result.user.email;
+    const role  = "Buyers"
+    const User = {
+      name,
+      email,
+      role
+     }
+
+    storeUserinfo(User);
+    
+  })
+  .catch(error =>{
+    console.log(error)
+  })
+ }
+
 
   return (
     <div className="max-w-sm mx-auto  my-10 p-8 space-y-3 rounded-xl bg-white drop-shadow-lg text-neutral">
@@ -79,7 +103,7 @@ const Signup = () => {
         <div className="space-y-1 text-sm ">
           <label htmlFor="username" className="block text-neutral">
             First Name
-            {name}
+        
           </label>
           <input
             type="text"
@@ -166,7 +190,7 @@ const Signup = () => {
         <div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
       </div>
       <div className="flex justify-center space-x-4">
-        <button aria-label="Log in with Google" className="p-3 rounded-sm">
+        <button onClick={signinWithgoogle} aria-label="Log in with Google" className="p-3 rounded-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 32 32"

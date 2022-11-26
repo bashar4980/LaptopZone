@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -27,6 +28,13 @@ const Authcontext = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
   //End signup email & password
+  //sing in with provider
+
+  const providerSignin = (provider)=>{
+    return signInWithPopup(auth , provider)
+  }
+
+
 
   //Sign in with email & password
 
@@ -79,7 +87,8 @@ const Authcontext = ({ children }) => {
     updateUser,
     signinUser,
     logOut,
-    resetPassword
+    resetPassword,
+    providerSignin
   };
   return (
     <UserContext.Provider value={userInfo}>{children}</UserContext.Provider>
