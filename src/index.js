@@ -8,13 +8,21 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import Authcontext from './Context/AuthProvider';
+// import AuthProvider from './Context/AuthProvider';
+import { Toaster } from 'react-hot-toast';
 const queryClient = new QueryClient()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
     <QueryClientProvider client={queryClient}>
-    <App/>
+    <Authcontext>
+    <App></App>
+    <Toaster></Toaster>
+    </Authcontext>
+  
+ 
   </QueryClientProvider>
 );
 
