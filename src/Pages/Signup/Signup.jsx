@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../Context/AuthProvider";
+import toast from "react-hot-toast";
 // import { UserContext } from "../../context/Authcontext";
 
 const Signup = () => {
@@ -19,9 +20,13 @@ const Signup = () => {
     const email = data.Email;
     const password = data.password;
     const name = data.firstName;
-    // const role = data.role;
+    const role = data.role;
    
-
+   const User = {
+    name,
+    email,
+    role
+   }
     const userInfo = {
       displayName: name,
 
@@ -29,11 +34,12 @@ const Signup = () => {
     createUser(email, password)
       .then((result) => {
         userUpdateInfo(userInfo);
+        storeUserinfo(User)
         const user = result.user;
         console.log(user);
       })
       .catch((error) => console.log(error));
-    reset();
+   
   };
 
   //update user
@@ -43,7 +49,27 @@ const Signup = () => {
       .catch((error) => console.log(error));
   };
 
-  //
+  //store user information
+  const storeUserinfo =(user) =>{
+    fetch(`http://localhost:5000/users` , {
+      method:"POST",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify(user)
+
+    })
+    .then(res => res.json())
+    .then(data=> {
+      console.log(data)
+      if(data.acknowledged){
+        toast.success("User created successfully");
+        reset()
+      }
+
+    }
+    )
+  }
 
   return (
     <div className="max-w-sm mx-auto  my-10 p-8 space-y-3 rounded-xl bg-white drop-shadow-lg text-neutral">
