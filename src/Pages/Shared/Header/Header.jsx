@@ -21,10 +21,13 @@ const Header = () => {
       {
         user?.uid ? <>
         <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+        <li>
           <p>{user?.displayName}</p>
         </li>
         <li>
-        <button onClick={logOut} className="btn btn-ghost btn-tiny">Logout</button>
+        <button onClick={logOut} className="btn-ghost">Logout</button>
         </li>
         </>:
         <>

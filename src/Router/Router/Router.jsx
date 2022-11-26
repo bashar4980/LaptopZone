@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import Dashboardlayout from "../../layout/Dashboard/Dashboardlayout";
 import Main from "../../layout/Main/Main";
+import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 // import ProductC from "../../Pages/Home/ProductCategories/ProductC";
 import Products from "../../Pages/Products/Products/Products";
 import Signup from "../../Pages/Signup/Signup";
+import Private from "./Private";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +33,16 @@ const router = createBrowserRouter([
             element:<Signup></Signup>
         }
        ]
+    },
+    {
+        path:"/dashboard",
+        element:<Private><Dashboardlayout></Dashboardlayout></Private>,
+        children:[
+            {
+                path:"/dashboard",
+                element:<Dashboard></Dashboard>
+            }
+        ]
     }
 ])
 
