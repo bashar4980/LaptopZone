@@ -35,11 +35,12 @@ const Login = () => {
 
   //sign in google
 
-  const signinWithgoogle = () => {
+  const LoginWithgoogle = () => {
     providerSignin(provider)
       .then((result) => {
         console.log(result);
-        navigate(from, { replace: true });
+       
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -100,7 +101,7 @@ const Login = () => {
       </div>
       <div className="flex justify-center space-x-4">
         <button
-          onClick={signinWithgoogle}
+          onClick={LoginWithgoogle}
           aria-label="Log in with Google"
           className="p-3 rounded-sm"
         >

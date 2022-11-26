@@ -9,6 +9,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 const Signup = () => {
   const { createUser, updateUser , providerSignin } = useContext(UserContext);
   const provider = new GoogleAuthProvider()
+  
 
   //
   const {
