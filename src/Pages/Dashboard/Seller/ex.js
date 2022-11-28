@@ -3,16 +3,11 @@ import React from "react";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../Context/AuthProvider";
-import { format } from 'date-fns';
-import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const { user } = useContext(UserContext);
-  const {register , handleSubmit} = useForm();
-  const navigate = useNavigate()
-  const Apikey='e83c4aac14fa6e1ed5c98c392dad426c';
-  const {data: Category ,isLoading} = useQuery({
+  const {register , reset , handleSubmit} = useForm()
+  const {data: Category , isLoading} = useQuery({
     queryKey:["products" , "category"],
     queryFn: async()=>{
         const res = await fetch("http://localhost:5000/products/category");
@@ -28,64 +23,7 @@ const AddProduct = () => {
   //
  const productHandeler = (data) =>{
   console.log(data)
-  const date = new Date()
-  const Category =  data.Category;
-  // const ProductImg = data.
-  const ProductName= data.ProductName;
-  const ProductOrginalPrice=data.ProductOrginalPrice;
-  const ResellPrice=data.ResellPrice;
-  const Location =data.Location;
-  const UsesTime=data.UsesTime;
-  const ProductOwner=user?.displayName;
-  const OwnerEmail =user?.email;
-  const PostTime = format(date , "PP");
-  const ProductCondition = data.ProductDescription;
-  const UserPhone = data.phone;
-  const ProductDescription = data.ProductDescription;
-  const image = data.image[0];
-  const formData = new FormData();
-  formData.append("image" , image)
-  fetch(`https://api.imgbb.com/1/upload?key=${Apikey}`,{
-    method:"POST",
-    body:formData
-  })
-  .then(res=>res.json())
-  .then(imgData =>{
-   
-    const productInfo = {
-      ProductImg:imgData.data.url,
-      ProductName,
-      ProductOrginalPrice,
-      ResellPrice,
-      Location,
-      UsesTime,
-      ProductOwner,
-      OwnerEmail,
-      ProductCondition,
-      ProductDescription,
-      UserPhone,
-      PostTime
-
-    }
-    if(imgData.success){
-      fetch(`http://localhost:5000/products/update/${Category}`,{
-        method:"PATCH",
-        headers:{"Content-type":"application/json"},
-        body:JSON.stringify(productInfo)
-      })
-      .then(res=>res.json())
-      .then(data=>{
-       if(data.acknowledged){
-        toast.success(`${user?.displayName} ,  product add successfully`);
-       
-        navigate("/dashboard/myproducts")
-       }
-      })
-    }
-    
-  })
-  
-  
+  reset();
  }
 
 
@@ -152,7 +90,7 @@ const AddProduct = () => {
                   <label htmlFor="files" className="block text-sm font-medium">
                     Product Image
                   </label>
-                  <input type="file" {...register("image")} className="input text-gray-800 input-bordered w-full max-w-xs" />
+                  <input type="file" {...register("image")} className="input input-bordered w-full max-w-xs" />
                 </div>
 
                 <div className="col-span-full sm:col-span-3">
