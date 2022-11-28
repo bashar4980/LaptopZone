@@ -9,6 +9,7 @@ import Header from "../../Pages/Shared/Header/Header";
 const Dashboardlayout = () => {
   const { user } = useContext(UserContext);
   const [role] = useRole(user?.email);
+  console.log("outside" , role)
   return (
     <div>
       <Header></Header>
@@ -33,10 +34,10 @@ const Dashboardlayout = () => {
             {role === "Seller" && (
               <>
                 <li>
-                  <Link to="/myproducts">My Products</Link>
+                  <Link to="/dashboard/myproducts">My Products</Link>
                 </li>
                 <li>
-                  <Link to="/addproducts">Add Product</Link>
+                  <Link to="/dashboard/addproducts">Add Product</Link>
                 </li>
               </>
             )}
