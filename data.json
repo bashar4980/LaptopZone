@@ -1,116 +1,36 @@
 [
   {
-    "Category": "Hp Laptop",
-    "CategoryImg":"https://i.ibb.co/rFkSr7q/2048px-HP-logo-2012-svg.png",
-    "Products": [
-      {
-        "ProductImg": "https://i.ibb.co/0KKn7tb/250-g8-01-500x500.jpg",
-        "ProductName": "HP 250 G8 Core i3 11th Gen",
-        "ProductOrginalPrice": 30000,
-        "ResellPrice": 2500,
-        "Location": "Kustia",
-        "UsesTime": "1 years",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      },
-      {
-        "ProductImg": "https://i.ibb.co/wC37ZBd/15s-du3811tu-01-500x500.webp",
-        "ProductName": "laptop HP 15s-du3811TU Core i3 11th Gen",
-        "ProductOrginalPrice": 45000,
-        "ResellPrice": 38000,
-        "Location": "Khulna",
-        "UsesTime": "1 years",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      }
-    ]
+  "ProductImg": "https://i.ibb.co/0KKn7tb/250-g8-01-500x500.jpg",
+  "ProductName": "HP 250 G8 Core i3 11th Gen",
+  "ProductOrginalPrice": 30000,
+  "ResellPrice": 2500,
+  "Location": "Kustia",
+  "UsesTime": "1 years",
+  "ProductOwner": "Bahsar Ahmed",
+  "OwnerEmail": "bashar.ahmed@4980@gmail.com",
+  "PostTime": "Nov 25, 2022"
   },
   {
-    "Category": "Acer Laptop",
-    "CategoryImg":"https://i.ibb.co/4sYNLbR/download.png",
-    "Products": [
-      {
-        "ProductImg": "https://i.ibb.co/Gt7PBvd/aspire-3-a315-58-001-500x500.jpg",
-        "ProductName": "Acer Aspire 3 A315-58 Core i3 11th Gen",
-        "ProductOrginalPrice": 30000,
-        "ResellPrice": 2000,
-        "Location": "Mirpur",
-        "UsesTime": "1 years",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      },
-      {
-        "ProductImg": "https://i.ibb.co/3MFsSbh/extensa-ex215-1-500x500.jpg",
-        "ProductName": "Acer Extensa 15 EX215-54-37AH Core i3 11th Gen ",
-        "ProductOrginalPrice": 4000,
-        "ResellPrice": 35000,
-        "Location": "Khulna",
-        "UsesTime": "1 years",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      }
-    ]
+  "ProductImg": "https://i.ibb.co/wC37ZBd/15s-du3811tu-01-500x500.webp",
+  "ProductName": "laptop HP 15s-du3811TU Core i3 11th Gen",
+  "ProductOrginalPrice": 45000,
+  "ResellPrice": 38000,
+  "Location": "Khulna",
+  "UsesTime": "1 years",
+  "ProductOwner": "Bahsar Ahmed",
+  "OwnerEmail": "bashar.ahmed@4980@gmail.com",
+  "PostTime": "Nov 25, 2022"
   },
   {
-    "Category": "Dell Laptop",
-    "CategoryImg":"https://i.ibb.co/GTTmz2w/download-1.png",
-
-    "Products": [
-      {
-        "ProductImg": "https://i.ibb.co/LYNYT2M/latitude-3420-01-500x500.jpg",
-        "ProductName": "Dell Latitude 14 3420 Core i5 11th Gen",
-        "ProductOrginalPrice": 25000,
-        "ResellPrice": 22000,
-        "Location": "Khulna",
-        "UsesTime": "2 years",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      },
-      {
-        "ProductImg": "https://i.ibb.co/gFs6Mbp/vostro-15-3510-01-500x500.jpg",
-        "ProductName": "Dell Vostro 15 3510 Core i5 11th Gen",
-        "ProductOrginalPrice": 60000,
-        "ResellPrice": 55000,
-        "Location": "Khulna",
-        "UsesTime": "6 months",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      }
-    ]
-  },
-
-  {
-    "Category": "Asus Laptop",
-    "CategoryImg":"https://i.ibb.co/Jm0pWdd/images.jpg",
-    "Products": [
-      {
-        "ProductImg": "https://i.ibb.co/RHTThXN/zenbook-14-ux435eal-500x500.jpg",
-        "ProductName": "Asus ZenBook 14 UX435EAL Core i5 11th Gen",
-        "ProductOrginalPrice": 80000,
-        "ResellPrice": 78000,
-        "Location": "Khulna",
-        "UsesTime": "7 months",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      },
-      {
-        "ProductImg": "https://i.ibb.co/1bWy83d/vivobook-15-oled-001-500x500.jpg",
-        "ProductName": "Asus VivoBook 15 OLED K513EQ Core i7 11th Gen",
-        "ProductOrginalPrice": 60000,
-        "ResellPrice": 55000,
-        "Location": "Khulna",
-        "UsesTime": "6 months",
-        "ProductOwner": "Bahsar Ahmed",
-        "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-        "PostTime": "Nov 25, 2022"
-      }
-    ]
+  "ProductImg": "https://i.ibb.co/wy5HkcP/spectre-x360-08-500x500.jpg",
+  "ProductName": "HP Spectre x360 Convertible",
+  "ProductOrginalPrice": "10000",
+  "ResellPrice": "80000",
+  "Location": "Kushtia",
+  "UsesTime": "5month",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simonto@gmail.com",
+  "ProductCondition": "Amazing",
+  "PostTime": "Nov 29, 2022"
   }
-]
+  ]
