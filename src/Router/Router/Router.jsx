@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboardlayout from "../../layout/Dashboard/Dashboardlayout";
 import Main from "../../layout/Main/Main";
+import PageNotFound from "../../Pages/404Page/404";
 import Allbuyers from "../../Pages/Dashboard/Admin/Allbuyers";
 import AllSellers from "../../Pages/Dashboard/Admin/Allsellers";
 import Myorder from "../../Pages/Dashboard/Buyer/Myorder";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
             element:<Signup></Signup>
         }
        ]
+    },
+    { 
+        path:"*",
+        element:<PageNotFound></PageNotFound>
     },
     {
         path:"/dashboard",
