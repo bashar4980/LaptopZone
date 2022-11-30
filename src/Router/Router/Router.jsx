@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Dashboardlayout from "../../layout/Dashboard/Dashboardlayout";
 import Main from "../../layout/Main/Main";
 import PageNotFound from "../../Pages/404Page/404";
+import Blog from "../../Pages/Blog/Blog";
+import BlogDetails from "../../Pages/Blog/BlogDetails";
 import Allbuyers from "../../Pages/Dashboard/Admin/Allbuyers";
 import AllSellers from "../../Pages/Dashboard/Admin/Allsellers";
 import Myorder from "../../Pages/Dashboard/Buyer/Myorder";
@@ -37,6 +39,17 @@ const router = createBrowserRouter([
         {
             path:"/signup",
             element:<Signup></Signup>
+        },
+        {
+            path:"/blogs",
+            element:<Blog></Blog>
+
+        },
+        {
+            path:"/blogs/:id",
+            loader: async ({params})=> fetch(`http://localhost:5000/blog/${params.id}`),
+            element:<BlogDetails></BlogDetails>
+
         }
        ]
     },

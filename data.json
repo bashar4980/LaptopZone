@@ -1,36 +1,23 @@
 [
   {
-  "ProductImg": "https://i.ibb.co/0KKn7tb/250-g8-01-500x500.jpg",
-  "ProductName": "HP 250 G8 Core i3 11th Gen",
-  "ProductOrginalPrice": 30000,
-  "ResellPrice": 2500,
-  "Location": "Kustia",
-  "UsesTime": "1 years",
-  "ProductOwner": "Bahsar Ahmed",
-  "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-  "PostTime": "Nov 25, 2022"
+    "Question":"What are the different ways to manage a state in a React application?",
+    "img":"https://i.ibb.co/Nt8GcBD/hero.png",
+    "Answer":"The Four Kinds of React State to Manage. Local state  <li>Global state <li>Server state  URL state </br> Local (UI) state – Local state is data we manage in one or another component.<br/>Global (UI) state – Global state is data we manage across multiple components<br>Server state – Data that comes from an external server that must be integrated with our UI state.<br/>URL state – Data that exists on our URLs, including the pathname and query parameters.."
   },
   {
-  "ProductImg": "https://i.ibb.co/wC37ZBd/15s-du3811tu-01-500x500.webp",
-  "ProductName": "laptop HP 15s-du3811TU Core i3 11th Gen",
-  "ProductOrginalPrice": 45000,
-  "ResellPrice": 38000,
-  "Location": "Khulna",
-  "UsesTime": "1 years",
-  "ProductOwner": "Bahsar Ahmed",
-  "OwnerEmail": "bashar.ahmed@4980@gmail.com",
-  "PostTime": "Nov 25, 2022"
+    "Question":"How does prototypical inheritance work?",
+    "img":"https://i.ibb.co/x1Rd7tg/images-1.jpg",
+    "Answer":" The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object"
   },
   {
-  "ProductImg": "https://i.ibb.co/wy5HkcP/spectre-x360-08-500x500.jpg",
-  "ProductName": "HP Spectre x360 Convertible",
-  "ProductOrginalPrice": "10000",
-  "ResellPrice": "80000",
-  "Location": "Kushtia",
-  "UsesTime": "5month",
-  "ProductOwner": "Simonto",
-  "OwnerEmail": "simonto@gmail.com",
-  "ProductCondition": "Amazing",
-  "PostTime": "Nov 29, 2022"
+    "Question":"What is a unit test? Why should we write unit tests?",
+    "img":"https://i.ibb.co/3N6tXSG/Unit-Testing.png",
+    "Answer":"A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system.They enable you to catch bugs early in the development process. Automated unit tests help a great deal with regression testing. They detect code smells in your codebase."
+  },
+  {
+    "Question":"React vs. Angular vs. Vue",
+    "img":"https://i.ibb.co/1zbVZtw/React-VS-Angular-VS-Vue-Which-One-to-Choose.gif",
+    "Answer":"React is the JavaScript library of User Interfaces. It is build single-page applications and also allows you to create reusable UI components. It is a front-end JavaScript framework. Angular, developed by Google, was released in the year 2010. It is a TypeScript-based framework that uses a regular DOM. Angular provides a set of tools using which a complex, reactive UI can be built. Vue was developed by a former Google employee and was released in the year 2014. It was developed to make the best version of Angular and make a custom tool. It is used for developing single-page engaging and high-quality web applications."
   }
+
   ]
