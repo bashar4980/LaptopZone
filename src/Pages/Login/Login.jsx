@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/AuthProvider";
+import useToken from "../../Hooks/useToken/useToken";
 // import { UserContext } from "../../context/Authcontext";
 // import Reset from "../ResetModal/Reset";
 
@@ -16,15 +17,22 @@ const Login = () => {
   const provider = new GoogleAuthProvider();
   let from = location.state?.from?.pathname || "/";
 
+  const [email , setEmail] = useState("")
+
+  const [token] = useToken(email);
+  if(token){
+    navigate(from, { replace: true });
+  }
+
   const loginHandeler = (data) => {
     const email = data.email;
     const password = data.password;
     signinUser(email, password)
       .then((result) => {
-        const user = result.user;
+    
         toast.success("Login Successfully");
-        console.log(user);
-        navigate(from, { replace: true });
+        console.log("res" , result);
+        setEmail(email)
         reset();
       })
       .catch((error) => {
@@ -38,9 +46,10 @@ const Login = () => {
   const LoginWithgoogle = () => {
     providerSignin(provider)
       .then((result) => {
-        console.log(result);
+        console.log(result.user.email);
+        setEmail(result.user.email)
        
-        navigate("/");
+       
       })
       .catch((error) => {
         console.log(error);

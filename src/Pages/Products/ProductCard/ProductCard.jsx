@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
 
         <div className="card-actions mt-3 justify-center">
           <button className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
-            Buy Now
+            Book Now
           </button>
         </div>
       </div>

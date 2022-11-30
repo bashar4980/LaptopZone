@@ -1,14 +1,24 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../Context/AuthProvider";
 import toast from "react-hot-toast";
 import { GoogleAuthProvider } from "firebase/auth";
+import useToken from "../../Hooks/useToken/useToken";
+import { useState } from "react";
 // import { UserContext } from "../../context/Authcontext";
 
 const Signup = () => {
   const { createUser, updateUser , providerSignin } = useContext(UserContext);
-  const provider = new GoogleAuthProvider()
+  const provider = new GoogleAuthProvider();
+  const [email , setEmail] = useState("")
+  const [token] = useToken(email);
+  const navigate = useNavigate()
+
+  if(token){
+     navigate("/");
+    
+  }
   
 
   //
@@ -54,6 +64,7 @@ const Signup = () => {
 
   //store user information
   const storeUserinfo =(user) =>{
+    const email = user.email;
     fetch(`http://localhost:5000/users` , {
       method:"POST",
       headers:{
@@ -64,9 +75,12 @@ const Signup = () => {
     })
     .then(res => res.json())
     .then(data=> {
-      console.log(data)
+     
       if(data.acknowledged){
+        setEmail(email)
+     
         toast.success("User created successfully");
+       
         reset()
       }
 
