@@ -1,10 +1,12 @@
-import { useQueries, useQuery } from "@tanstack/react-query";
+// import { useQueries, useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { GoVerified } from "react-icons/go";
 
 const ProductCard = ({ product }) => {
-  const [verify , setVerify] = useState()
-  
+  const [verify, setVerify] = useState();
+
   // console.log(product);
   const {
     ProductImg,
@@ -15,16 +17,16 @@ const ProductCard = ({ product }) => {
     PostTime,
     UsesTime,
     ProductOwner,
+    OwnerEmail,
   } = product;
   //check verify
-
-// const {} =useQuery({
-//   queryKey:[],
-//   queryFn: async ()=>{
-//     const res=>
-//   }
-// })
-
+  console.log(OwnerEmail);
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/verify/${OwnerEmail}`)
+      .then((res) => res.json())
+      .then((data) => setVerify(data));
+  }, [OwnerEmail]);
+  console.log(verify);
   //
   return (
     <div className="card  shadow-xl  ">
@@ -43,25 +45,30 @@ const ProductCard = ({ product }) => {
         <p className=" font-semibold">Location: {Location}</p>
         <p className="font-semibold">Post: {PostTime}</p>
         <div className="flex space-x-4">
-          <img
-            alt=""
-            src="https://source.unsplash.com/100x100/?portrait"
-            className="object-cover w-12 h-12 rounded-full shadow bg-gray-500"
-          />
           <div className="flex flex-col space-y-1">
             <a
               rel="noopener noreferrer"
               href="/"
-              className="text-sm font-semibold"
+              className="text-2xl font-semibold"
             >
               {ProductOwner}
             </a>
-            <span className="text-xs text-secondary">Veryfied</span>
+            <span className=" text-secondary text-3xl">
+              {verify?.verified === true ? (
+                <GoVerified title="Verifiyed"></GoVerified>
+              ) : (
+                <p className="text-error">
+                  <GoVerified title="Not variyfied" />
+                </p>
+              )}
+            </span>
           </div>
         </div>
 
         <div className="card-actions mt-3 justify-center">
-          <button className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">Buy Now</button>
+          <button className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
+            Buy Now
+          </button>
         </div>
       </div>
     </div>

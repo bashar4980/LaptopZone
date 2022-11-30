@@ -16,6 +16,7 @@ const AllSellers= () => {
     return  <div className="mx-auto w-16 h-16 border-4 border-dashed rounded-full t animate-spin border-secondary"></div>
   }
  
+  // console.log("usr" , AllSellers)
   const updateUser = buyer =>{
     const email = buyer.email;
     const name = buyer.name
@@ -32,6 +33,38 @@ const AllSellers= () => {
        
     })
   }
+  //delte user
+  // const manageSeller = seller =>{
+  //   const id= seller._id;
+  //   // const name = seller.name;
+  //   fetch(`http://localhost:5000/user/${id}`,{
+  //     method:"DELETE",
+     
+  //   })
+  //   .then(res=>res.json())
+  //   .then(data=>{
+  //     console.log(data)
+  //     refetch()
+  //   })
+  // }
+  //
+
+  const manageSeller = seller => {
+    fetch(`http://localhost:5000/user/${seller._id}`, {
+        method: 'DELETE', 
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.deletedCount > 0){
+            refetch();
+            toast.success(`${seller.name} deleted successfully`)
+        }
+    })
+}
+
+
+
+  //
 
   return (
     <div>
@@ -58,7 +91,7 @@ const AllSellers= () => {
                         buyer.verify ? <button onClick={()=> updateUser(buyer)} disabled className="btn btn-success btn-xs">verify</button>
                         : <button onClick={()=> updateUser(buyer)} className="btn btn-success btn-xs">verify</button>
                         }</td>
-                      <td><button className="btn btn-error btn-xs">Delete</button></td>
+                      <td><button onClick={()=> manageSeller(buyer)} className="btn btn-error btn-xs">Delete</button></td>
                     </tr>
                   );
                 })}

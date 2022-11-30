@@ -1,23 +1,205 @@
 [
   {
-    "Question":"What are the different ways to manage a state in a React application?",
-    "img":"https://i.ibb.co/Nt8GcBD/hero.png",
-    "Answer":"The Four Kinds of React State to Manage. Local state  <li>Global state <li>Server state  URL state </br> Local (UI) state – Local state is data we manage in one or another component.<br/>Global (UI) state – Global state is data we manage across multiple components<br>Server state – Data that comes from an external server that must be integrated with our UI state.<br/>URL state – Data that exists on our URLs, including the pathname and query parameters.."
+  "_id": "6387198b275822ce4023c1c3",
+  "Category": "Hp Laptop",
+  "CategoryImg": "https://i.ibb.co/rFkSr7q/2048px-HP-logo-2012-svg.png",
+  "Products": [
+  {
+  "ProductImg": "https://i.ibb.co/0KKn7tb/250-g8-01-500x500.jpg",
+  "ProductName": "HP 250 G8 Core i3 11th Gen",
+  "ProductOrginalPrice": 30000,
+  "ResellPrice": 2500,
+  "Location": "Kustia",
+  "UsesTime": "1 years",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
   },
   {
-    "Question":"How does prototypical inheritance work?",
-    "img":"https://i.ibb.co/x1Rd7tg/images-1.jpg",
-    "Answer":" The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object"
+  "ProductImg": "https://i.ibb.co/wC37ZBd/15s-du3811tu-01-500x500.webp",
+  "ProductName": "laptop HP 15s-du3811TU Core i3 11th Gen",
+  "ProductOrginalPrice": 45000,
+  "ResellPrice": 38000,
+  "Location": "Khulna",
+  "UsesTime": "1 years",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
   },
   {
-    "Question":"What is a unit test? Why should we write unit tests?",
-    "img":"https://i.ibb.co/3N6tXSG/Unit-Testing.png",
-    "Answer":"A unit test is a way of testing a unit - the smallest piece of code that can be logically isolated in a system.They enable you to catch bugs early in the development process. Automated unit tests help a great deal with regression testing. They detect code smells in your codebase."
+  "ProductImg": "https://i.ibb.co/wy5HkcP/spectre-x360-08-500x500.jpg",
+  "ProductName": "HP Spectre x360 Convertible",
+  "ProductOrginalPrice": "10000",
+  "ResellPrice": "80000",
+  "Location": "Kushtia",
+  "UsesTime": "5month",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "Amazing",
+  "PostTime": "Nov 29, 2022"
   },
   {
-    "Question":"React vs. Angular vs. Vue",
-    "img":"https://i.ibb.co/1zbVZtw/React-VS-Angular-VS-Vue-Which-One-to-Choose.gif",
-    "Answer":"React is the JavaScript library of User Interfaces. It is build single-page applications and also allows you to create reusable UI components. It is a front-end JavaScript framework. Angular, developed by Google, was released in the year 2010. It is a TypeScript-based framework that uses a regular DOM. Angular provides a set of tools using which a complex, reactive UI can be built. Vue was developed by a former Google employee and was released in the year 2014. It was developed to make the best version of Angular and make a custom tool. It is used for developing single-page engaging and high-quality web applications."
+  "ProductImg": "https://i.ibb.co/XzZ6G2r/pavilion-14-dv1234tu-01-500x500.jpg",
+  "ProductName": "HP Pavilion 14-dv1234TU Core i5 ",
+  "ProductOrginalPrice": "120000",
+  "ResellPrice": "80000",
+  "Location": "Chittagong",
+  "UsesTime": "5month",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "good",
+  "ProductDescription": "good",
+  "PostTime": "Nov 30, 2022"
   }
-
+  ]
+  },
+  {
+  "_id": "6387198b275822ce4023c1c4",
+  "Category": "Dell Laptop",
+  "CategoryImg": "https://i.ibb.co/GTTmz2w/download-1.png",
+  "Products": [
+  {
+  "ProductImg": "https://i.ibb.co/LYNYT2M/latitude-3420-01-500x500.jpg",
+  "ProductName": "Dell Latitude 14 3420 Core i5 11th Gen",
+  "ProductOrginalPrice": 25000,
+  "ResellPrice": 22000,
+  "Location": "Khulna",
+  "UsesTime": "2 years",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/gFs6Mbp/vostro-15-3510-01-500x500.jpg",
+  "ProductName": "Dell Vostro 15 3510 Core i5 11th Gen",
+  "ProductOrginalPrice": 60000,
+  "ResellPrice": 55000,
+  "Location": "Khulna",
+  "UsesTime": "6 months",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/YyQD2TG/15s-du3811tu-01-500x500.webp",
+  "ProductName": "Hp probook",
+  "ProductOrginalPrice": "5000",
+  "ResellPrice": "4500",
+  "Location": "Kushtia",
+  "UsesTime": "5month",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "PostTime": "Nov 29, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/qkH81hb/xps-15-9510-01-500x500.jpg",
+  "ProductName": "Dell XPS 15 9510 Core i7 11th Gen",
+  "ProductOrginalPrice": "150000",
+  "ResellPrice": "100000",
+  "Location": "Dhaka",
+  "UsesTime": "5 months",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "Goood",
+  "ProductDescription": "Goood",
+  "PostTime": "Nov 30, 2022"
+  }
+  ]
+  },
+  {
+  "_id": "6387198b275822ce4023c1c5",
+  "Category": "Asus Laptop",
+  "CategoryImg": "https://i.ibb.co/Jm0pWdd/images.jpg",
+  "Products": [
+  {
+  "ProductImg": "https://i.ibb.co/RHTThXN/zenbook-14-ux435eal-500x500.jpg",
+  "ProductName": "Asus ZenBook 14 UX435EAL Core i5 11th Gen",
+  "ProductOrginalPrice": 80000,
+  "ResellPrice": 78000,
+  "Location": "Khulna",
+  "UsesTime": "7 months",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/1bWy83d/vivobook-15-oled-001-500x500.jpg",
+  "ProductName": "Asus VivoBook 15 OLED K513EQ Core i7 11th Gen",
+  "ProductOrginalPrice": 60000,
+  "ResellPrice": 55000,
+  "Location": "Khulna",
+  "UsesTime": "6 months",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/f0wwCM8/rog-swift-360hz-pg259qn-500x500.jpg",
+  "ProductName": "ASUS ROG Swift 360Hz",
+  "ProductOrginalPrice": "120000",
+  "ResellPrice": "80000",
+  "Location": "Chittagong",
+  "UsesTime": "5 months",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "It is amazing",
+  "PostTime": "Nov 29, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/Pw6K4SC/tuf-gaming-f15-fx506he-01-500x500.webp",
+  "ProductName": "ASUS TUF Gaming F15 FX506HE",
+  "ProductOrginalPrice": "150000",
+  "ResellPrice": "100000",
+  "Location": "Khulna",
+  "UsesTime": "5 months",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "This product is good",
+  "ProductDescription": "This product is good",
+  "PostTime": "Nov 30, 2022"
+  }
+  ]
+  },
+  {
+  "_id": "6387198b275822ce4023c1c6",
+  "Category": "Acer Laptop",
+  "CategoryImg": "https://i.ibb.co/4sYNLbR/download.png",
+  "Products": [
+  {
+  "ProductImg": "https://i.ibb.co/Gt7PBvd/aspire-3-a315-58-001-500x500.jpg",
+  "ProductName": "Acer Aspire 3 A315-58 Core i3 11th Gen",
+  "ProductOrginalPrice": 30000,
+  "ResellPrice": 2000,
+  "Location": "Mirpur",
+  "UsesTime": "1 years",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/3MFsSbh/extensa-ex215-1-500x500.jpg",
+  "ProductName": "Acer Extensa 15 EX215-54-37AH Core i3 11th Gen ",
+  "ProductOrginalPrice": 4000,
+  "ResellPrice": 35000,
+  "Location": "Khulna",
+  "UsesTime": "1 years",
+  "ProductOwner": "Rimon Ahmed",
+  "OwnerEmail": "rimon@gmail.com",
+  "PostTime": "Nov 25, 2022"
+  },
+  {
+  "ProductImg": "https://i.ibb.co/17cM2Hs/nitro-5-an515-01-500x500.jpg",
+  "ProductName": "Acer Nitro 5 AN515-45-R4TJ Ryzen",
+  "ProductOrginalPrice": "130000",
+  "ResellPrice": "80000",
+  "Location": "Khulna",
+  "UsesTime": "5 months",
+  "ProductOwner": "Simonto",
+  "OwnerEmail": "simanto@gmail.com",
+  "ProductCondition": "good ",
+  "ProductDescription": "good ",
+  "PostTime": "Nov 29, 2022"
+  }
+  ]
+  }
   ]
