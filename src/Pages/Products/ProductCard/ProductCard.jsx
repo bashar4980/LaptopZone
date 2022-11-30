@@ -1,7 +1,11 @@
+import { useQueries, useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useState } from "react";
 
 const ProductCard = ({ product }) => {
-  console.log(product);
+  const [verify , setVerify] = useState()
+  
+  // console.log(product);
   const {
     ProductImg,
     ProductName,
@@ -12,6 +16,16 @@ const ProductCard = ({ product }) => {
     UsesTime,
     ProductOwner,
   } = product;
+  //check verify
+
+// const {} =useQuery({
+//   queryKey:[],
+//   queryFn: async ()=>{
+//     const res=>
+//   }
+// })
+
+  //
   return (
     <div className="card  shadow-xl  ">
       <figure>
