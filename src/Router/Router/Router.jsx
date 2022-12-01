@@ -15,6 +15,9 @@ import Login from "../../Pages/Login/Login";
 // import ProductC from "../../Pages/Home/ProductCategories/ProductC";
 import Products from "../../Pages/Products/Products/Products";
 import Signup from "../../Pages/Signup/Signup";
+import AdminPrivate from "../DashboardPrivate/AdminPriivate";
+import BuyerPrivate from "../DashboardPrivate/BuyerPrivate";
+import SellerPrivate from "../DashboardPrivate/SellerPrivate";
 import Private from "./Private";
 
 const router = createBrowserRouter([
@@ -63,27 +66,27 @@ const router = createBrowserRouter([
         children:[
             {
                 path:"/dashboard",
-                element:<Dashboard></Dashboard>
+                element:<Private><Dashboard></Dashboard></Private>
             },
             {
                 path:"/dashboard/myorders",
-                element:<Myorder></Myorder>
+                element:<BuyerPrivate><Myorder></Myorder></BuyerPrivate>
             },
             {
                 path:"/dashboard/buyers",
-                element:<Allbuyers></Allbuyers>
+                element:<AdminPrivate><Allbuyers></Allbuyers></AdminPrivate>
             },
             {
                 path:"/dashboard/sellers",
-                element:<AllSellers></AllSellers>
+                element:<AdminPrivate><AllSellers></AllSellers></AdminPrivate>
             },
             {
                 path:"/dashboard/addproducts",
-                element:<AddProduct></AddProduct>
+                element:<SellerPrivate><AddProduct></AddProduct></SellerPrivate>
             },
             {
                 path:"/dashboard/myproducts",
-                element:<Myproducts></Myproducts>
+                element:<SellerPrivate><Myproducts></Myproducts></SellerPrivate>
             }
 
         ]

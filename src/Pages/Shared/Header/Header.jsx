@@ -1,5 +1,6 @@
 import React from "react";
 import { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider";
 import "./Header.css"
@@ -8,7 +9,11 @@ const Header = () => {
 
   const {user , logOut} = useContext(UserContext);
   
-
+  const logoutHandeler = () => {
+    logOut().then(() => {
+      toast.success("Log out successfully");
+    });
+  };
   const menuItem = (
     <>
       <li>
@@ -27,7 +32,7 @@ const Header = () => {
           <p>{user?.displayName}</p>
         </li>
         <li>
-        <button onClick={logOut} className="btn-ghost">Logout</button>
+        <button onClick={logoutHandeler} className="btn-ghost">Logout</button>
         </li>
         </>:
         <>

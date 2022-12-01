@@ -12,7 +12,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import app from "../firebase/firebase.config.js";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 
 export const UserContext = createContext();
@@ -53,11 +53,7 @@ const Authcontext = ({ children }) => {
   //end reset password
   //start sign out
   const logOut = () => {
-    signOut(auth).then(() => {
-      toast.success("Log out Successfully")
-    }).catch((error) => {
-      // An error happened.
-    });;
+    return signOut(auth);
   };
 
   //end sign out
