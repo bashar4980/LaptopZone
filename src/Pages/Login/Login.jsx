@@ -48,6 +48,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user.email);
         setEmail(result.user.email)
+        navigate("/")
        
        
       })

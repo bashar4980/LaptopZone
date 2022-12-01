@@ -1,6 +1,6 @@
 [
   {
-  "_id": "6387198b275822ce4023c1c3",
+ 
   "Category": "Hp Laptop",
   "CategoryImg": "https://i.ibb.co/rFkSr7q/2048px-HP-logo-2012-svg.png",
   "Products": [
@@ -11,9 +11,12 @@
   "ResellPrice": 2500,
   "Location": "Kustia",
   "UsesTime": "1 years",
+  
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/wC37ZBd/15s-du3811tu-01-500x500.webp",
@@ -24,7 +27,9 @@
   "UsesTime": "1 years",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/wy5HkcP/spectre-x360-08-500x500.jpg",
@@ -34,9 +39,11 @@
   "Location": "Kushtia",
   "UsesTime": "5month",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "Amazing",
-  "PostTime": "Nov 29, 2022"
+  "PostTime": "Nov 29, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/XzZ6G2r/pavilion-14-dv1234tu-01-500x500.jpg",
@@ -46,15 +53,18 @@
   "Location": "Chittagong",
   "UsesTime": "5month",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "good",
   "ProductDescription": "good",
-  "PostTime": "Nov 30, 2022"
+  "PostTime": "Nov 30, 2022",
+  "isBooked": false,
+  "isAvilable":false
+
   }
   ]
   },
   {
-  "_id": "6387198b275822ce4023c1c4",
+
   "Category": "Dell Laptop",
   "CategoryImg": "https://i.ibb.co/GTTmz2w/download-1.png",
   "Products": [
@@ -67,7 +77,9 @@
   "UsesTime": "2 years",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/gFs6Mbp/vostro-15-3510-01-500x500.jpg",
@@ -78,7 +90,9 @@
   "UsesTime": "6 months",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/YyQD2TG/15s-du3811tu-01-500x500.webp",
@@ -88,8 +102,10 @@
   "Location": "Kushtia",
   "UsesTime": "5month",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
-  "PostTime": "Nov 29, 2022"
+  "OwnerEmail": "simonto@gmail.com",
+  "PostTime": "Nov 29, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/qkH81hb/xps-15-9510-01-500x500.jpg",
@@ -99,15 +115,17 @@
   "Location": "Dhaka",
   "UsesTime": "5 months",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "Goood",
   "ProductDescription": "Goood",
-  "PostTime": "Nov 30, 2022"
+  "PostTime": "Nov 30, 2022",
+  "isBooked": false,
+  "isAvilable":false
   }
   ]
   },
   {
-  "_id": "6387198b275822ce4023c1c5",
+
   "Category": "Asus Laptop",
   "CategoryImg": "https://i.ibb.co/Jm0pWdd/images.jpg",
   "Products": [
@@ -120,7 +138,9 @@
   "UsesTime": "7 months",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/1bWy83d/vivobook-15-oled-001-500x500.jpg",
@@ -131,7 +151,9 @@
   "UsesTime": "6 months",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/f0wwCM8/rog-swift-360hz-pg259qn-500x500.jpg",
@@ -141,9 +163,11 @@
   "Location": "Chittagong",
   "UsesTime": "5 months",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "It is amazing",
-  "PostTime": "Nov 29, 2022"
+  "PostTime": "Nov 29, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/Pw6K4SC/tuf-gaming-f15-fx506he-01-500x500.webp",
@@ -153,15 +177,17 @@
   "Location": "Khulna",
   "UsesTime": "5 months",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "This product is good",
   "ProductDescription": "This product is good",
-  "PostTime": "Nov 30, 2022"
+  "PostTime": "Nov 30, 2022",
+  "isBooked": false,
+  "isAvilable":false
   }
   ]
   },
   {
-  "_id": "6387198b275822ce4023c1c6",
+ 
   "Category": "Acer Laptop",
   "CategoryImg": "https://i.ibb.co/4sYNLbR/download.png",
   "Products": [
@@ -174,7 +200,9 @@
   "UsesTime": "1 years",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/3MFsSbh/extensa-ex215-1-500x500.jpg",
@@ -185,7 +213,9 @@
   "UsesTime": "1 years",
   "ProductOwner": "Rimon Ahmed",
   "OwnerEmail": "rimon@gmail.com",
-  "PostTime": "Nov 25, 2022"
+  "PostTime": "Nov 25, 2022",
+  "isBooked": false,
+  "isAvilable":false
   },
   {
   "ProductImg": "https://i.ibb.co/17cM2Hs/nitro-5-an515-01-500x500.jpg",
@@ -195,10 +225,12 @@
   "Location": "Khulna",
   "UsesTime": "5 months",
   "ProductOwner": "Simonto",
-  "OwnerEmail": "simanto@gmail.com",
+  "OwnerEmail": "simonto@gmail.com",
   "ProductCondition": "good ",
   "ProductDescription": "good ",
-  "PostTime": "Nov 29, 2022"
+  "PostTime": "Nov 29, 2022",
+  "isBooked": false,
+  "isAvilable":false
   }
   ]
   }

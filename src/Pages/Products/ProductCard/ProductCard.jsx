@@ -1,11 +1,15 @@
 // import { useQueries, useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { GoVerified } from "react-icons/go";
+import { UserContext } from "../../../Context/AuthProvider";
 
 const ProductCard = ({ product }) => {
   const [verify, setVerify] = useState();
+  const {user} = useContext(UserContext)
 
   // console.log(product);
   const {
@@ -20,13 +24,38 @@ const ProductCard = ({ product }) => {
     OwnerEmail,
   } = product;
   //check verify
-  console.log(OwnerEmail);
+  // console.log(OwnerEmail);
   useEffect(() => {
     fetch(`http://localhost:5000/users/verify/${OwnerEmail}`)
       .then((res) => res.json())
       .then((data) => setVerify(data));
   }, [OwnerEmail]);
-  console.log(verify);
+  // console.log(verify);
+
+  const bookingHandeler =(product)=>{
+    const ProductName=product.ProductName;
+    const ProductImg= product.ProductImg;
+    const ResellPrice = product.ResellPrice;
+    const buyerEmail = user?.email
+    const productInfo={
+      ProductName,
+      ProductImg,
+      ResellPrice,
+    buyerEmail
+    }
+   fetch("http://localhost:5000/products/booking",{
+    method:"POST",
+    headers:{"Content-type":"application/json"},
+    body:JSON.stringify(productInfo)
+   })
+   .then(res=>res.json())
+   .then(data=>{
+    if(data.acknowledged){
+      toast.success(`${ProductName} is booked`)
+    }
+   })
+  
+  }
   //
   return (
     <div className="card  shadow-xl  ">
@@ -66,7 +95,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="card-actions mt-3 justify-center">
-          <button className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
+          <button onClick={()=>bookingHandeler(product)} className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
             Book Now
           </button>
         </div>

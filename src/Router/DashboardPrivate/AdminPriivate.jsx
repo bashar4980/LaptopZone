@@ -20,7 +20,8 @@ const AdminPrivate = ({ children }) => {
 
   if (role === 'Admin') {
     return children;
-  } else {
+  } 
+  else {
     return(
         
         <>
