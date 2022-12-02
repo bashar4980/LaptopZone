@@ -1,15 +1,18 @@
 // import { useQueries, useQuery } from "@tanstack/react-query";
 import React from "react";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import { GoVerified } from "react-icons/go";
-import { UserContext } from "../../../Context/AuthProvider";
+// import { UserContext } from "../../../Context/AuthProvider";
+import ModalProduct from "./ModalProduct";
 
 const ProductCard = ({ product }) => {
   const [verify, setVerify] = useState();
-  const {user} = useContext(UserContext)
+  // const { user } = useContext(UserContext);
+  const [selectedproduct , setSelectedProduct] = useState(null)
+ 
 
   // console.log(product);
   const {
@@ -24,38 +27,17 @@ const ProductCard = ({ product }) => {
     OwnerEmail,
   } = product;
   //check verify
-  // console.log(OwnerEmail);
+
   useEffect(() => {
     fetch(`http://localhost:5000/users/verify/${OwnerEmail}`)
       .then((res) => res.json())
       .then((data) => setVerify(data));
   }, [OwnerEmail]);
-  // console.log(verify);
-
-  const bookingHandeler =(product)=>{
-    const ProductName=product.ProductName;
-    const ProductImg= product.ProductImg;
-    const ResellPrice = product.ResellPrice;
-    const buyerEmail = user?.email
-    const productInfo={
-      ProductName,
-      ProductImg,
-      ResellPrice,
-    buyerEmail
-    }
-   fetch("http://localhost:5000/products/booking",{
-    method:"POST",
-    headers:{"Content-type":"application/json"},
-    body:JSON.stringify(productInfo)
-   })
-   .then(res=>res.json())
-   .then(data=>{
-    if(data.acknowledged){
-      toast.success(`${ProductName} is booked`)
-    }
-   })
   
-  }
+
+   const bookingHandeler =product=>{
+    setSelectedProduct(product)
+   }
   //
   return (
     <div className="card  shadow-xl  ">
@@ -95,11 +77,18 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="card-actions mt-3 justify-center">
-          <button onClick={()=>bookingHandeler(product)} className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
+          <label  onClick={()=>bookingHandeler(product)}  htmlFor="booking" className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
             Book Now
-          </button>
+          </label>
+         
+         
+           
         </div>
       </div>
+     {
+      selectedproduct && 
+      <ModalProduct  product={selectedproduct} setSelectedProduct={setSelectedProduct}></ModalProduct>
+     }
     </div>
   );
 };

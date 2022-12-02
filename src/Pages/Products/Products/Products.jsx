@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+// import ModalProduct from '../ProductCard/ModalProduct';
 import ProductCard from '../ProductCard/ProductCard';
 
 
@@ -20,6 +21,7 @@ const Products = () => {
                 })
              }
             </div>
+         
         </div>
     );
 };

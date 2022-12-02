@@ -7,6 +7,8 @@ import { UserContext } from "../../../Context/AuthProvider";
 
 const Myproducts = () => {
   const { user } = useContext(UserContext);
+  // const Access_token = localStorage.getItem('Access_token');
+  // console.log(Access_token)
 
   const {
     data: sellerProduct,
@@ -26,6 +28,7 @@ const Myproducts = () => {
   });
 
   const addvertiseProduct = (product) => {
+    console.log("home" , product)
     fetch("http://localhost:5000/advertise", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -40,6 +43,8 @@ const Myproducts = () => {
         }
       });
   };
+
+  
   if (isLoading) {
     return <div>Loading</div>;
   }

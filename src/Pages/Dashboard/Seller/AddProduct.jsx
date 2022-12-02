@@ -70,7 +70,7 @@ const AddProduct = () => {
           fetch(`http://localhost:5000/products/update/${Category}`, {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify(productInfo),
+            body: JSON.stringify(productInfo)
           })
             .then((res) => res.json())
             .then((data) => {

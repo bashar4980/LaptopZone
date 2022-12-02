@@ -5,6 +5,7 @@ import { useEffect } from "react";
 const useRole = (email) => {
   const [role, setRole] = useState("");
   const [roleLoading, setRoleloading] = useState(true);
+  console.log(role)
 
   useEffect(() => {
     if (email) {

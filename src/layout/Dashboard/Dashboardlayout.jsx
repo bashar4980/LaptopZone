@@ -10,6 +10,7 @@ const Dashboardlayout = () => {
   const { user } = useContext(UserContext);
   const [role] = useRole(user?.email);
   console.log("outside" , role)
+  console.log(user?.email)
   return (
     <div>
       <Header></Header>
