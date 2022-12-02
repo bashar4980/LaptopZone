@@ -1,28 +1,15 @@
-/*
- const bookingHandeler =(product)=>{
-    const ProductName=product.ProductName;
-    const ProductImg= product.ProductImg;
-    const ResellPrice = product.ResellPrice;
-    const buyerEmail = user?.email
-    const productInfo={
-      ProductName,
-      ProductImg,
-      ResellPrice,
-      buyerEmail
-    }
-   fetch("http://localhost:5000/products/booking",{
-    method:"POST",
-    headers:{"Content-type":"application/json"},
-    body:JSON.stringify(productInfo)
-   })
-   .then(res=>res.json())
-   .then(data=>{
-    if(data.acknowledged){
-      toast.success(`${ProductName} is booked`)
-    }
-   })
-  
-  }
-
-
-*/ 
+// app.post("/create-payment-intent" , async(req,res)=>{
+//   const booking = req.bpdy;
+//   const price = booking.price;
+//   const amount = (0.01*price)*100
+//   const paymentIntent = await stripe.paymentIntents.create({
+//     amount: amount,
+//     currency: "usd",
+//     automatic_payment_methods: {
+//       enabled: true,
+//     },
+//   });
+//   res.send({
+//     clientSecret: paymentIntent.client_secret,
+//   });
+// })

@@ -89,7 +89,7 @@ const AllSellers= () => {
                       <td>{buyer.email}</td>
                       <td>{
                         buyer.verify ? <button onClick={()=> updateUser(buyer)} disabled className="btn btn-success btn-xs">verify</button>
-                        : <button onClick={()=> updateUser(buyer)} className="btn btn-success btn-xs">verify</button>
+                        : <button onClick={()=> updateUser(buyer)} className="btn btn-success btn-xs">Unverify</button>
                         }</td>
                       <td><button onClick={()=> manageSeller(buyer)} className="btn btn-error btn-xs">Delete</button></td>
                     </tr>

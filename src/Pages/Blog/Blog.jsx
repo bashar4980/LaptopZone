@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { format } from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
+import Loading from "../Shared/loading/Loading";
 
 const Blog = () => {
   const { data, isLoading } = useQuery({
@@ -13,7 +14,7 @@ const Blog = () => {
     },
   });
   if (isLoading) {
-    return <h1>Loading</h1>;
+    return <Loading></Loading>
   }
   return (
     <div>

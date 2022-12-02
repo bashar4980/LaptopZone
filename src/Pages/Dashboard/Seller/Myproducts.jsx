@@ -4,6 +4,7 @@ import React from "react";
 import { useContext } from "react";
 import toast from "react-hot-toast";
 import { UserContext } from "../../../Context/AuthProvider";
+import Loading from "../../Shared/loading/Loading";
 
 const Myproducts = () => {
   const { user } = useContext(UserContext);
@@ -46,7 +47,7 @@ const Myproducts = () => {
 
   
   if (isLoading) {
-    return <div>Loading</div>;
+    return <Loading></Loading>;
   }
   return (
     <div>

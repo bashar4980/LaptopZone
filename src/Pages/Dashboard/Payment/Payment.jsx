@@ -14,7 +14,7 @@ const Payment = () => {
       <h1 className="text-4xl font-bold text-secondary mb-5">Payment Please</h1>
       <h3 className="text-3xl ">Product: {paymentData.ProductName}</h3>
       <p className="text-xl font-semibold">Price: {paymentData.ResellPrice}</p>
-      <p className="text-xl font-semibold">Price: {paymentData.buyerEmail}</p>
+      <p className="text-xl font-semibold">Email: {paymentData.buyerEmail}</p>
 
       <div className="w-96 my-12">
       <Elements stripe={stripePromise}>
