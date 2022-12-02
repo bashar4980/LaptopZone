@@ -11,8 +11,7 @@ import ModalProduct from "./ModalProduct";
 const ProductCard = ({ product }) => {
   const [verify, setVerify] = useState();
   // const { user } = useContext(UserContext);
-  const [selectedproduct , setSelectedProduct] = useState(null)
- 
+  const [selectedproduct, setSelectedProduct] = useState(null);
 
   // console.log(product);
   const {
@@ -33,11 +32,10 @@ const ProductCard = ({ product }) => {
       .then((res) => res.json())
       .then((data) => setVerify(data));
   }, [OwnerEmail]);
-  
 
-   const bookingHandeler =product=>{
-    setSelectedProduct(product)
-   }
+  const bookingHandeler = (product) => {
+    setSelectedProduct(product);
+  };
   //
   return (
     <div className="card  shadow-xl  ">
@@ -77,18 +75,21 @@ const ProductCard = ({ product }) => {
         </div>
 
         <div className="card-actions mt-3 justify-center">
-          <label  onClick={()=>bookingHandeler(product)}  htmlFor="booking" className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent">
+          <label
+            onClick={() => bookingHandeler(product)}
+            htmlFor="booking"
+            className="btn btn-secondary w-full text-white hover:text-black hover:bg-transparent"
+          >
             Book Now
           </label>
-         
-         
-           
         </div>
       </div>
-     {
-      selectedproduct && 
-      <ModalProduct  product={selectedproduct} setSelectedProduct={setSelectedProduct}></ModalProduct>
-     }
+      {selectedproduct && (
+        <ModalProduct
+          product={selectedproduct}
+          setSelectedProduct={setSelectedProduct}
+        ></ModalProduct>
+      )}
     </div>
   );
 };

@@ -75,7 +75,7 @@ const Header = () => {
           </ul>
         </div>
         <a href="/" className="btn btn-ghost normal-case font-bold text-secondary text-xl">
-         LaptopZone
+         LaptopBazar
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
