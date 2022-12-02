@@ -19,20 +19,28 @@ const Myproducts = () => {
     queryKey: ["seller"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/products/seller/${user?.email}`,{
-          headers:{'authorization': `bearer ${localStorage.getItem('Access_token')}`}
+        `https://laptopzone.vercel.app/products/seller/${user?.email}`,
+        {
+          headers: {
+            authorization: `bearer ${localStorage.getItem("Access_token")}`,
+          },
         }
       );
       const data = await res.json();
       return data;
     },
   });
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   const addvertiseProduct = (product) => {
-    console.log("home" , product)
-    fetch("http://localhost:5000/advertise", {
+    fetch("https://laptopzone.vercel.app/advertise", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        authorization: `bearer ${localStorage.getItem("Access_token")}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(product),
     })
       .then((res) => res.json())
@@ -45,10 +53,8 @@ const Myproducts = () => {
       });
   };
 
-  
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+ 
+ 
   return (
     <div>
       <div className="container p-2 mx-auto sm:p-4 text-gray-100">

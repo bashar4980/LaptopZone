@@ -6,6 +6,7 @@ import Blog from "../../Pages/Blog/Blog";
 import BlogDetails from "../../Pages/Blog/BlogDetails";
 import Allbuyers from "../../Pages/Dashboard/Admin/Allbuyers";
 import AllSellers from "../../Pages/Dashboard/Admin/Allsellers";
+import Reported from "../../Pages/Dashboard/Admin/Reported";
 import Myorder from "../../Pages/Dashboard/Buyer/Myorder";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import Payment from "../../Pages/Dashboard/Payment/Payment";
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/products/:id",
-            loader: async({params})=>fetch(`http://localhost:5000/products/${params.id}`),
+            loader: async({params})=>fetch(`https://laptopzone.vercel.app/products/${params.id}`),
             element:<Private><Products></Products></Private>
         },
         {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
         },
         {
             path:"/blogs/:id",
-            loader: async ({params})=> fetch(`http://localhost:5000/blog/${params.id}`),
+            loader: async ({params})=> fetch(`https://laptopzone.vercel.app/blog/${params.id}`),
             element:<BlogDetails></BlogDetails>
 
         }
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
                 element:<AdminPrivate><AllSellers></AllSellers></AdminPrivate>
             },
             {
+                path:"/dashboard/reported",
+                element:<AdminPrivate><Reported></Reported></AdminPrivate>
+            },
+            {
                 path:"/dashboard/addproducts",
                 element:<SellerPrivate><AddProduct></AddProduct></SellerPrivate>
             },
@@ -92,7 +97,7 @@ const router = createBrowserRouter([
             {
                 path:"/dashboard/payment/:id",
                 element:<BuyerPrivate><Payment></Payment></BuyerPrivate>,
-                loader: async({params})=> fetch(`http://localhost:5000/booking/${params.id}`)
+                loader: async({params})=> fetch(`https://laptopzone.vercel.app/booking/${params.id}`)
             }
 
         ]

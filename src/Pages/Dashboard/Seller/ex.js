@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../Context/AuthProvider";
 
@@ -10,7 +9,7 @@ const AddProduct = () => {
   const {data: Category , isLoading} = useQuery({
     queryKey:["products" , "category"],
     queryFn: async()=>{
-        const res = await fetch("http://localhost:5000/products/category");
+        const res = await fetch("https://laptopzone.vercel.app/products/category");
         const data = await res.json();
         return data
     }

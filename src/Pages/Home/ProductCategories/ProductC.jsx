@@ -1,12 +1,12 @@
-import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import Categories from "./Categories";
 
 const ProductC = () => {
   const { data: ProductData, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/products");
+      const res = await fetch("https://laptopzone.vercel.app/products");
       const data = await res.json();
       return data;
     },

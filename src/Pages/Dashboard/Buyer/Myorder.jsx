@@ -7,10 +7,19 @@ import AddtoCard from './AddtoCard';
 
 const Myorder = () => {
     const {user} = useContext(UserContext);
+    const email = user?.email;
+    const userInfo ={
+        email
+    }
      const {data:bookingData , isLoading} = useQuery({
         queryKey:[],
         queryFn:async()=>{
-            const res = await fetch(`http://localhost:5000/buyer/booking?email=${user?.email}`);
+            const res = await fetch(`https://laptopzone.vercel.app/buyer/booking?email=${user?.email}`,{
+                headers:{'authorization': `bearer ${localStorage.getItem('Access_token')}`,
+               "Content-type":"application/json"
+           },
+           body:JSON.stringify(userInfo)
+            });
             const data = await res.json();
             return data;
         }

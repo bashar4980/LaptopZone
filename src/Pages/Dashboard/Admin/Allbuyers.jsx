@@ -1,13 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { UserContext } from "../../../Context/AuthProvider";
 
 const Allbuyers = () => {
     const role = "Buyers"
+    const {user} = useContext(UserContext);
+    
   const { data: Allbuyers, isLoading , refetch} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/users?role=${role}`);
+      const res = await fetch(`https://laptopzone.vercel.app/users?role=${role}`);
       const data = await res.json();
       return data;
     },
@@ -17,8 +21,16 @@ const Allbuyers = () => {
   }
 
   const manageBuyer = buyer => {
-    fetch(`http://localhost:5000/user/${buyer._id}`, {
+    const email = user?.email;
+    const userInfo ={
+      email
+    }
+    fetch(`https://laptopzone.vercel.app/user/${buyer._id}`, {
         method: 'DELETE', 
+        headers:{'authorization': `bearer ${localStorage.getItem('Access_token')}`,
+        "Content-type":"application/json"
+      },
+        body:JSON.stringify(userInfo)
     })
     .then(res => res.json())
     .then(data => {

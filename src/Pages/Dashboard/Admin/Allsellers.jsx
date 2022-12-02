@@ -1,13 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { useContext } from "react";
 import toast from "react-hot-toast";
+import { UserContext } from "../../../Context/AuthProvider";
 
 const AllSellers= () => {
-    const role = "Seller"
+    const role = "Seller";
+    const {user} = useContext(UserContext)
   const { data: AllSellers, isLoading , refetch} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/users?role=${role}`);
+      const res = await fetch(`https://laptopzone.vercel.app/users?role=${role}`);
       const data = await res.json();
       return data;
     },
@@ -20,7 +23,7 @@ const AllSellers= () => {
   const updateUser = buyer =>{
     const email = buyer.email;
     const name = buyer.name
-    fetch(`http://localhost:5000/users/seller/${email}`,{
+    fetch(`https://laptopzone.vercel.app/users/seller/${email}`,{
       method:"PATCH"
     })
     .then(res=>res.json())
@@ -37,7 +40,7 @@ const AllSellers= () => {
   // const manageSeller = seller =>{
   //   const id= seller._id;
   //   // const name = seller.name;
-  //   fetch(`http://localhost:5000/user/${id}`,{
+  //   fetch(`https://laptopzone.vercel.app/user/${id}`,{
   //     method:"DELETE",
      
   //   })
@@ -50,8 +53,16 @@ const AllSellers= () => {
   //
 
   const manageSeller = seller => {
-    fetch(`http://localhost:5000/user/${seller._id}`, {
+    const email = user?.email;
+    const userInfo ={
+      email
+    }
+    fetch(`https://laptopzone.vercel.app/user/${seller._id}`, {
         method: 'DELETE', 
+        headers:{'authorization': `bearer ${localStorage.getItem('Access_token')}`,
+        "Content-type":"application/json"
+      },
+        body:JSON.stringify(userInfo)
     })
     .then(res => res.json())
     .then(data => {

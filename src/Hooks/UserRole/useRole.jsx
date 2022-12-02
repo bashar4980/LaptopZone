@@ -1,6 +1,5 @@
 // import React from 'react';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useRole = (email) => {
   const [role, setRole] = useState("");
@@ -9,7 +8,7 @@ const useRole = (email) => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:5000/users/${email}`)
+      fetch(`https://laptopzone.vercel.app/users/${email}`)
         .then((res) => res.json())
         .then((data) => {
           const role = data.role;

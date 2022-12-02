@@ -1,8 +1,6 @@
 // import { useQuery } from "@tanstack/react-query";
-import React from "react";
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AddCard from "./AddCard";
 
 const Advertise = () => {
@@ -10,7 +8,7 @@ const Advertise = () => {
    console.log(addProduct)
 
  useEffect(()=>{
-    axios.get("http://localhost:5000/addvertise")
+    axios.get("https://laptopzone.vercel.app/addvertise")
     .then(res=>{
         const value = res.data;
         setAddProduct(value)

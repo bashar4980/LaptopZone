@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { UserContext } from "../../Context/AuthProvider";
-import toast from "react-hot-toast";
 import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/AuthProvider";
 import useToken from "../../Hooks/useToken/useToken";
-import { useState } from "react";
 // import { UserContext } from "../../context/Authcontext";
 
 const Signup = () => {
@@ -65,7 +64,7 @@ const Signup = () => {
   //store user information
   const storeUserinfo =(user) =>{
     const email = user.email;
-    fetch(`http://localhost:5000/users` , {
+    fetch(`https://laptopzone.vercel.app/users` , {
       method:"POST",
       headers:{
         "Content-type":"application/json"

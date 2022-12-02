@@ -1,12 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { UserContext } from "../../../Context/AuthProvider";
 import { format } from "date-fns";
+import React, { useContext } from "react";
+import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../../Context/AuthProvider";
 
 const AddProduct = () => {
   const { user } = useContext(UserContext);
@@ -16,7 +15,7 @@ const AddProduct = () => {
   const { data: Category, isLoading } = useQuery({
     queryKey: ["products", "category"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/products/category");
+      const res = await fetch("https://laptopzone.vercel.app/products/category");
       const data = await res.json();
       return data;
     },
@@ -67,7 +66,7 @@ const AddProduct = () => {
           PostTime,
         };
         if (imgData.success) {
-          fetch(`http://localhost:5000/products/update/${Category}`, {
+          fetch(`https://laptopzone.vercel.app/products/update/${Category}`, {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify(productInfo)

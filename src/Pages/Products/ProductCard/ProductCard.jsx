@@ -1,8 +1,8 @@
 // import { useQueries, useQuery } from "@tanstack/react-query";
 import React from "react";
 // import { useContext } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 // import toast from "react-hot-toast";
 import { GoVerified } from "react-icons/go";
 // import { UserContext } from "../../../Context/AuthProvider";
@@ -28,10 +28,35 @@ const ProductCard = ({ product }) => {
   //check verify
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/verify/${OwnerEmail}`)
+    fetch(`https://laptopzone.vercel.app/users/verify/${OwnerEmail}`)
       .then((res) => res.json())
       .then((data) => setVerify(data));
   }, [OwnerEmail]);
+//
+
+const reportHandeler =(product) =>{
+  const productName = product.ProductName;
+  const price = product.ResellPrice
+  const productInfo ={
+         productName,
+         price
+  }
+  fetch("https://laptopzone.vercel.app/product/report", {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(productInfo),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.acknowledged) {
+        toast.success(`Report successfully`);
+       
+      }
+    });
+}
+
+//
+
 
   const bookingHandeler = (product) => {
     setSelectedProduct(product);
@@ -72,9 +97,13 @@ const ProductCard = ({ product }) => {
               )}
             </span>
           </div>
-        </div>
 
+        </div>
+       <>
+       <button onClick={()=>reportHandeler(product)} className="w-20 btn btn-error btn-xs">Report</button>
+       </>
         <div className="card-actions mt-3 justify-center">
+          
           <label
             onClick={() => bookingHandeler(product)}
             htmlFor="booking"

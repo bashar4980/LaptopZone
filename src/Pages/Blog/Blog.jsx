@@ -8,7 +8,7 @@ const Blog = () => {
   const { data, isLoading } = useQuery({
     queryHash: [],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/blog");
+      const res = await fetch("https://laptopzone.vercel.app/blog");
       const data = await res.json();
       return data;
     },

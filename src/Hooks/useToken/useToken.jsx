@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 const useToken = (email) => {
@@ -7,7 +6,7 @@ const useToken = (email) => {
     const [token , setToken] = useState('')
    
     useEffect(()=>{
-      fetch(`http://localhost:5000/jwt?email=${email}`)
+      fetch(`https://laptopzone.vercel.app/jwt?email=${email}`)
       .then(res=>res.json())
       .then(data=>{
         const access_token = data.Access_token;
