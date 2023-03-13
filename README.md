@@ -1,7 +1,6 @@
 # Website Name & LinK
 ### Name: LaptopBazar
-### Client Side: [https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-bashar4980.git]
-### Server Side: [https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-bashar4980.git]
+
 ### Live : [https://laptopzone-86c92.web.app/]
 
 
